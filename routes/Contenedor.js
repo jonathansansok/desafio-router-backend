@@ -1,5 +1,5 @@
 const fs = require("fs");
-const router = express.Router();
+
 class Contenedor {
   constructor(file) {
     this.file = file;

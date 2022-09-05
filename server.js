@@ -1,17 +1,17 @@
 
 const express = require("express");
 const app = express();
-const Contenedor = require("./Contenedor.js")
-const userRouter = require('./routes/users')
+const Contenedor = require("./routes/Contenedor.js")
+/* const userRouter = require('./routes/users')
 const petsRouter = require('./routes/pets')
-const fileRouter= require('./routes/files')
-const ContenedorRouter = require("./Contenedor.js")
+const fileRouter= require('./routes/files') */
+const ContenedorRouter = require("./routes/Contenedor")
 
 app.use(express.json());//es un middleware
 app.use('/content', express.static('public')) //es un middleware
-app.use('/users', userRouter);
+/* app.use('/users', userRouter);
 app.use('/pets', petsRouter);
-app.use('/files', fileRouter);
+app.use('/files', fileRouter); */
 app.use('/contenedor', ContenedorRouter);
 const router = express.Router();
 
