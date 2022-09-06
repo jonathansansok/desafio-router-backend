@@ -18,3 +18,4 @@ const handleSubmit = (evt, form, route) => {
 };
 
 usersForm.addEventListener("submit", (e) =>  handleSubmit(e, e.target, "/productos"));
+usersForm.addEventListener("submit", (e) =>  handleSubmit(e, e.target, "/productosRandom"));
