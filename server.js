@@ -36,7 +36,7 @@ const main = async () => {
   /*   router.get("/productos", (req, res) => {
     res.json(productos);
   }); */
-  router.get("/productosRandom", (req, res) => {
+  app.get("/productosRandom", (req, res) => {
     numeroAleatorio = Math.floor(Math.random() * productos.length) + 1;
     productoRandom = productos.find((prod) => prod.id === numeroAleatorio);
     res.json(productoRandom);
