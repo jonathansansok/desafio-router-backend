@@ -11,6 +11,7 @@ app.set("view engine", "ejs");
 
 let productos = [];
 
+
 app.get("/", (req, res) => {
   res.render("home", {
     productos: productos,
@@ -22,7 +23,7 @@ app.post("/", (req, res) => {
 });
 
 app.get("/productos", (req, res) => {
-  res.render( {
+  res.send( {
     productos: productos,
   });
 });
