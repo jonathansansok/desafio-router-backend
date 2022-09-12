@@ -1,13 +1,7 @@
- <% if (productos.length > 0) { %>
-    <% productos.forEach(element => { %>
-        <div>
-           <p><%=element.first_name %> </p>
-           <p><%=element.last %> </p>
-           <p><%=element.age %> </p>
-        </div>
-       <% })  else { %>
-      No hay nada cargado
-    <% } %> 
-
-
-
+<% if (productos.length > 0) { %> <% productos.forEach(element => { %>
+<div>
+  <p><%=element.first_name %></p>
+  <p><%=element.last %></p>
+  <p><%=element.age %></p>
+</div>
+<% })} else { %> No hay nada cargado <% } %>

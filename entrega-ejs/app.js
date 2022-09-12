@@ -22,7 +22,7 @@ app.post("/", (req, res) => {
 });
 
 app.get("/productos", (req, res) => {
-  res.render("home", {
+  res.render( {
     productos: productos,
   });
 });
