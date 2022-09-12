@@ -1,0 +1,13 @@
+ <% if (users.length > 0) { %>
+    <% users.forEach(element => { %>
+        <div>
+           <p><%=element.first_name %> </p>
+           <p><%=element.last %> </p>
+           <p><%=element.age %> </p>
+        </div>
+       <% })  else { %>
+      No hay nada cargado
+    <% } %> 
+
+
+
