@@ -1,5 +1,3 @@
-# Felipe Pardo
-
 ## new-Backend --- Apuntes de programación backend
 
 #### Temas vistos hasta el momento
