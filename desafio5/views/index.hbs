@@ -1,0 +1,21 @@
+{{>nav}}
+
+<main>
+  <div>
+    <h1>SERVIDOR EXPRESS - FORMULARIO EN HBS</h1>
+    <br />
+  </div>
+  <form action="/api/products" method="post">
+    <div class="inputContainer">
+      <input type="text" name="title" placeholder="Title" />
+      <br /><br />
+      <input type="number" name="price" placeholder="Price" />
+      <br /><br />
+      <input type="text" name="thumbnail" placeholder="product URL" />
+      <br /><br />
+    </div>
+    <div class="buttonContainer">
+      <input type="submit" value="Guardar datos en servidor" />
+    </div>
+  </form>
+</main>

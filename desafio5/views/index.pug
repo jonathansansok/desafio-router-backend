@@ -1,0 +1,23 @@
+extends layouts/layout
+
+block main
+    include includes/nav
+    main
+        div
+            h1 SERVIDOR EXPRESS - FORMULARIO EN PUG
+            br
+        form(action="/api/products" method="post")
+            div.inputContainer
+                input(type="text" name ="title" placeholder="Title")
+                br
+                br
+                input(type="number" name ="price" placeholder="Price")
+                br
+                br
+                input(type="text" name ="thumbnail" placeholder="product URL")
+                br
+                br
+            div.buttonContainer
+                input(type="submit" value="Guardar datos en servidor")
+    
+

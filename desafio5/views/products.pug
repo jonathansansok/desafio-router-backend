@@ -1,0 +1,17 @@
+extends layouts/layout
+
+
+block main
+    include includes/nav
+    main
+        if products
+            each i in products
+                div(class="card" style="width: 18rem; margin:10px")
+                    img(src=i.thumbnail class="card-img-top" alt=i.title)
+                    div(class="card-body")
+                        h5(class="card-title")=i.title
+                        p(class="card-text")=`$ ${i.price}`
+                        a(href=`/api/products/${i.id}` class="btn btn-primary") Ver producto
+        else
+                h1 There are no products here
+
