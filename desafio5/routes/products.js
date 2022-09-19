@@ -23,7 +23,6 @@ const completedFields = (req, res, next) => {
 router.get("/", async (req, res) => {
     const data = await contenedor.getAll();
     res.status(200).render("products", {products: data});
-    
   });
   
   //* DEVUELVE UN PRODUCTO SEGÚN SU ID /////////////////////////////////////////////////
