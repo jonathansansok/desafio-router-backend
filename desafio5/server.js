@@ -11,10 +11,16 @@ const server = app.listen(PORT, () => console.log(`server up on ${PORT}`));
 
 const io = new Server(server);
 
+let history = [];
+
 io.on("conecction", (socket) => {
   console.log(`new user coneccted!!!!!: ${socket.id}`);
   socket.broadcast.emit('newUser') //para emitir a todos menos a ti mismo 
-});
+  socket.on('message', data => {
+    history.push(data)
+    socket.emit('history', history)
+  })
+}); 
 
 app.set("json spaces", 2); //* JSON formatter
 app.set("views", __dirname + "/views");
