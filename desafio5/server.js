@@ -15,18 +15,16 @@ let history = [];
 
 io.on("conecction", (socket) => {
   console.log(`new user coneccted!!!!!: ${socket.id}`);
-
-
-  socket.on('message', data => {
-    history.push(data)
-    socket.emit('history', history)
-  })
-  socket.on('registered', data => {
-    socket.broadcast.emit('newUser', data) //para emitir a todos menos a ti mismo 
-    socket.emit('history', history) // que se lea el historial solo cuando se registtran
+  socket.on("message", (data) => {
+    history.push(data);
+    io.emit("history", history); // A TODOS se les envia el historial
+  });
+  socket.on("registered", (data) => {
+    socket.broadcast.emit("newUser", data); //para emitir a TODOS MENOS a MI mismo
+    socket.emit("history", history); // para que YO LEA el historial solo cuando se registran, emitir desde un servidor solo para mi ,primera persona.
     /* console.log(data); */
-  })
-}); 
+  });
+});
 
 app.set("json spaces", 2); //* JSON formatter
 app.set("views", __dirname + "/views");
