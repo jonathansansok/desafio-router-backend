@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon desafio5/server.js"
+    "start": "node desafio5/server.js"
   },
   "dependencies": {
     "ejs": "^3.1.8",
