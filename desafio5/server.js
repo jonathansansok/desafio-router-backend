@@ -16,6 +16,7 @@ let history = [];
 io.on("conecction", (socket) => {
   console.log(`new user coneccted!!!!!: ${socket.id}`);
   socket.broadcast.emit('newUser') //para emitir a todos menos a ti mismo 
+  socket.emit('history', history)
   socket.on('message', data => {
     history.push(data)
     socket.emit('history', history)
