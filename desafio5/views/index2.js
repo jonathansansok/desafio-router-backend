@@ -9,6 +9,7 @@ Swal.fire({
     allowOutsideClick: false
 }).then(result =>{
     user = result.value;
+    socket.emit('registered', user)
 })
 
 chatBox.addEventListener('keyup', (evt) => {
@@ -18,11 +19,11 @@ chatBox.addEventListener('keyup', (evt) => {
     }
 })
 //sockets 
-socket.on('newUser', () => {
+socket.on('newUser', (data) => {
     alert('New user coneccted');
     swal.fire({
         icon: "succes",
-        text: "new user coneccted",
+        text: `${data} has coneccted`,
         toast: true,
         position: "top-right"
     })
