@@ -1,0 +1,29 @@
+.narrowtxt {
+  line-height: 18px;
+}
+
+.panel {
+  border-radius: 5px !important;
+}
+
+.panel-title,
+.panel-heading,
+.panel-title h1 {
+  padding-top: 10px;
+  margin-top: 0px;
+}
+
+.btn-block {
+  border-radius: 5px;
+}
+
+@media (min-width:500px) {
+  .btn-block {
+    width: 60% !important;
+  }
+}
+
+.test {
+  background-color: #f5f5f5;
+  color: rgb(255, 255, 255)
+}

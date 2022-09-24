@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-9 col-lg-9 col-xl-9">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center p-3"
+          style="border-top: 4px solid #ffa900;">
+          <h5 class="mb-0">Chat messages</h5>
+          <div class="d-flex flex-row align-items-center">
+            <i class="fas fa-minus me-3 text-muted fa-xs"></i>
+            <i class="fas fa-comments me-3 text-muted fa-xs"></i>
+            <i class="fas fa-times text-muted fa-xs"></i>
+          </div>
+        </div>
+        <div class="card-body" data-mdb-perfect-scrollbar="true" style=" height: 400px; overflow-y:scroll;"
+          id="mensajes-chat">
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+          <div>
+            <form class="input-group mb-0" onsubmit="return chatFunc(this)">
+              <input type="email" class="form-control" placeholder="Ingrese su Email" aria-label="Recipient's email"
+                aria-describedby="button-addon2" id="email" />
+
+              <input type="text" class="form-control" placeholder="Ingrese su mensaje" aria-label="Recipient's username"
+                aria-describedby="button-addon2" id="chatMsg" />
+
+              <button class="btn btn-warning" type="submit" id="button-addon2" style="padding-top: .55rem;">
+                Enviar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
