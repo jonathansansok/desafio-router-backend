@@ -1,38 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Regla",
-    "price": "30",
-    "foto": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-512.png"
+    "title": "bmw",
+    "price": "710000",
+    "foto": "https://cdn.motor1.com/images/mgl/LQWMG/s3/lanzamiento-bmw-serie-8-coupe-g15.webp"
   },
   {
     "id": 2,
-    "title": "Regla",
-    "price": "30",
-    "foto": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-512.png"
+    "title": "Mercedes",
+    "price": "60000",
+    "foto": "https://autotest.com.ar/wp-content/uploads/2022/06/Mercedes-Benz-Clase-C-lanzamiento-accio%CC%81n.jpg"
   },
   {
     "id": 3,
-    "title": "calculadora",
-    "price": "100",
-    "foto": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png"
+    "title": "Ferrari",
+    "price": "50000",
+    "foto": "https://www.autobild.es/sites/autobild.es/public/dc/fotos/Ferrari-sf90-stradale.jpg"
   },
   {
     "id": 4,
-    "title": "goku",
-    "price": "530000000",
-    "foto": "https://seeklogo.com/images/G/goku-hair-logo-CCF6366E7C-seeklogo.com.png?v=637728271820000000"
-  },
-  {
-    "id": 5,
-    "title": "234",
-    "price": "234",
-    "foto": "234"
-  },
-  {
-    "id": 6,
-    "title": "1",
-    "price": "1",
-    "foto": "1"
+    "title": "Audi",
+    "price": "530000",
+    "foto": "https://autotest.com.ar/wp-content/uploads/2021/02/AUDI-E-TRON-GT-4.jpg"
   }
 ]

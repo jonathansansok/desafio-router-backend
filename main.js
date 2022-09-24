@@ -40,9 +40,9 @@ io.on("connection", (socket) => {
   });
 });
 
-/////////////////////////
-// HANDLE BARS VIEWS/////
-/////////////////////////
+
+// HANDLE BARS VIEWS
+
 app.engine(
   "hbs",
   handlebars.engine({
@@ -67,14 +67,14 @@ app.get("/", (req, res) => {
   });
 });
 
-/////////////////////////
-// EXPRESS ROUTER ///////
-/////////////////////////
+
+// EXPRESS ROUTER 
+
 app.use("/productos", productosRouter);
 
-/////////////////////////
+
 // SERVER ON ////////////
-/////////////////////////
+
 httpServer.listen(3000, () => {
   console.log("Server ON");
 });
