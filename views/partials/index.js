@@ -1,13 +1,13 @@
 function render(data){
+  console.log(data);
     const html = data.map(elem => `<div>
     <span style="font-weight: bold;">${elem.email}</span>
     <span style="font-size: 10px;">${elem.date}</span>
     <p>${elem.msg}</p>
     </div>`).join(' ');
     document.getElementById('mensajes-chat').innerHTML = html;
-    
-}
 
+}
 
 function renderProductos(data){
   const html = data.map(elem => `

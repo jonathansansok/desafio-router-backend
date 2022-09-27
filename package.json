@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Morimx/CoderBackEnd.git"
+    "url": "git+https://github.com/jonathansansok/desafio-router-backend.git"
   },
   "author": "Claudio Fernandez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Morimx/CoderBackEnd/issues"
+    "url": "https://github.com/jonathansansok/desafio-router-backend/issues"
   },
-  "homepage": "https://github.com/Morimx/CoderBackEnd#readme",
+  "homepage": "https://github.com/jonathansansok/desafio-router-backend#readme",
   "dependencies": {
     "bootstrap": "^5.2.1",
     "express": "^4.18.1",

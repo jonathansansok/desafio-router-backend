@@ -16,7 +16,7 @@ app.use(express.static("views"));
 
 //Array del chat
 let mensajes = [{email: "bienvenida@chat.com", msg: "Bienvenido al chat", date: "01/01/2021 00:00:00"}];
-
+  
 /////////////////////////
 // SOCKET IO ////////////
 /////////////////////////
@@ -26,6 +26,7 @@ io.on("connection", (socket) => {
   socket.emit('new-message', mensajes);
   socket.emit('new-product', constructor.getAll());
   socket.on('new-message', (data) => {
+    console.log(data);
     mensajes.push(data);
     io.sockets.emit('new-message', mensajes);
     fs.writeFile('./mensajes.txt', JSON.stringify(mensajes), (err) => {
