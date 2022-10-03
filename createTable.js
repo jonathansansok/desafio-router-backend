@@ -3,7 +3,7 @@ const knex = require('knex')
 
 const database = knex(options)
 
-database.schema.createTable('cars', table => {
+database.schema.createTable('productos', table => {
     table.increments('id')
     table.string('name', 20)    //VARCHAR(20)
     table.integer('price')

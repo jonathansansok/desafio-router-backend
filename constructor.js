@@ -10,7 +10,7 @@ class Contenedor {
 }
 
   save(objeto) {
-    database('productos').insert(cars)
+    database('productos').insert(productos)
     .then((result) => console.log(result))
     .catch(err => console.log(err))
     .finally(() => database.destroy())
@@ -32,7 +32,7 @@ class Contenedor {
 
   deleteById(id) {
     database.from('productos').where('price', '<', 25000).del()
-    .then(() => console.log('Cars deleted!'))
+    .then(() => console.log('producto deleted!'))
     .catch(err => console.log(err))
     .finally(() => database.destroy())
   }
@@ -50,7 +50,7 @@ class Contenedor {
   }
 
   updateById(id, objetoNuevo) {
-    database.from('cars').where('name', 'Mercedes').update({price: 10000})
+    database.from('productos').where('name', 'Mercedes').update({price: 10000})
     .then(() => console.log('Car updated!'))
     .catch(err => console.log(err))
     .finally(() => database.destroy())
