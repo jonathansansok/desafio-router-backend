@@ -18,6 +18,11 @@ app.use(express.static("views"));
 const optionsMYSQL = require('./options/mysql.config')
 const optionsSQLITE = require('./options/sqlite3.config')
 //////////////////////////////////////////////////////////////////////////////////////
+// Instancio las clases pasandole las opciones de cada uno y la tabla correspondiente.
+/* const producto = new Product(optionsMYSQL, 'productos');
+const chat = new Chat(optionsSQLITE, 'mensajes'); */
+//////////////////////////////////////////////////////////////////////////////////////
+
 //Array del chat
 let mensajes = [
   {
