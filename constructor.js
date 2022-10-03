@@ -1,40 +1,40 @@
-const fs = require("fs");
+const options = require('./options/mysql.config')
+const knex = require('knex')
+
+const database = knex(options)
 
 class Contenedor {
-  constructor(archivo) {
-    this.archivo = archivo;
-  }
+  constructor(productos, table){
+    this.db = knex(productos)
+    this.table = table
+}
 
   save(objeto) {
-    const contenido = fs.readFileSync(this.archivo, "utf-8");
-    const productos = JSON.parse(contenido);
-    const id = productos.length + 1;
-    const producto = { id, ...objeto };
-    productos.push(producto);
-    fs.writeFileSync(this.archivo, JSON.stringify(productos, null, 2));
-    return id;
+    database('productos').insert(cars)
+    .then((result) => console.log(result))
+    .catch(err => console.log(err))
+    .finally(() => database.destroy())
   }
 
   getById(id) {
-    const data = fs.readFileSync(this.archivo, "utf-8");
-    const dataParseada = JSON.parse(data);
-    const objeto = dataParseada.find((objeto) => objeto.id === id);
-    return objeto;
+     database.from('productos').select('*').where('id', '1')
+    .then(data => console.log(JSON.parse(JSON.stringify(data))))
+    .catch(err => console.log(err))
+    .finally(() => database.destroy())
   }
 
   getAll() {
-    const data = fs.readFileSync(this.archivo, "utf-8");
-    const dataParseada = JSON.parse(data);
-    return dataParseada;
+     database.from('productos').select('*')
+     .then(data => console.log(JSON.parse(JSON.stringify(data))))
+    .catch(err => console.log(err))
+     .finally(() => database.destroy())
   }
 
   deleteById(id) {
-    const data = fs.readFileSync(this.archivo, "utf-8");
-    const dataParseada = JSON.parse(data);
-    const dataFiltrada = dataParseada.filter((objeto) => objeto.id !== id);
-    const dataString = JSON.stringify(dataFiltrada);
-    fs.writeFileSync(this.archivo, dataString);
-    return dataFiltrada;
+    database.from('productos').where('price', '<', 25000).del()
+    .then(() => console.log('Cars deleted!'))
+    .catch(err => console.log(err))
+    .finally(() => database.destroy())
   }
 
   deleteAll() {
@@ -50,18 +50,10 @@ class Contenedor {
   }
 
   updateById(id, objetoNuevo) {
-    const data = fs.readFileSync(this.archivo, "utf-8");
-    let dataParseada = JSON.parse(data);
-    let productoViejo = dataParseada.find((objeto) => objeto.id === id);
-    let mensaje = "Se reemplazo el producto";
-    if (productoViejo === undefined) {
-      throw { msg: "404 Not found" };
-    }
-    let productosFiltrados = dataParseada.filter((objeto) => objeto.id !== id);
-    productoViejo = { id, ...objetoNuevo };
-    productosFiltrados.push(productoViejo);
-    fs.writeFileSync(this.archivo, JSON.stringify(productosFiltrados, null, 2));
-    return mensaje;
+    database.from('cars').where('name', 'Mercedes').update({price: 10000})
+    .then(() => console.log('Car updated!'))
+    .catch(err => console.log(err))
+    .finally(() => database.destroy())
   }
 }
 
