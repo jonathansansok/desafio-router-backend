@@ -15,32 +15,37 @@ app.use(express.json());
 app.use(express.static("views"));
 
 //Array del chat
-let mensajes = [{email: "bienvenida@chat.com", msg: "Bienvenido al chat", date: "01/01/2021 00:00:00"}];
-  
+let mensajes = [
+  {
+    email: "bienvenida@chat.com",
+    msg: "Bienvenido al chat",
+    date: "01/01/2021 00:00:00",
+  },
+];
+
 /////////////////////////
 // SOCKET IO ////////////
 /////////////////////////
 
 io.on("connection", (socket) => {
   console.log("Se ha conectado un cliente");
-  socket.emit('new-message', mensajes);
-  socket.emit('new-product', constructor.getAll());
-  socket.on('new-message', (data) => {
+  socket.emit("new-message", mensajes);
+  socket.emit("new-product", constructor.getAll());
+  socket.on("new-message", (data) => {
     console.log(data);
     mensajes.push(data);
-    io.sockets.emit('new-message', mensajes);
-    fs.writeFile('./mensajes.txt', JSON.stringify(mensajes), (err) => {
+    io.sockets.emit("new-message", mensajes);
+    fs.writeFile("./mensajes.txt", JSON.stringify(mensajes), (err) => {
       if (err) throw err;
-      console.log('The file has been saved!');
+      console.log("The file has been saved!");
     });
   });
-  socket.on('new-product', async (data) => {
-   await constructor.save(data);
-   const productos = await constructor.getAll();
-    io.sockets.emit('new-product', productos);
+  socket.on("new-product", async (data) => {
+    await constructor.save(data);
+    const productos = await constructor.getAll();
+    io.sockets.emit("new-product", productos);
   });
 });
-
 
 // HANDLE BARS VIEWS
 
@@ -68,11 +73,9 @@ app.get("/", (req, res) => {
   });
 });
 
-
-// EXPRESS ROUTER 
+// EXPRESS ROUTER
 
 app.use("/productos", productosRouter);
-
 
 // SERVER ON ////////////
 
