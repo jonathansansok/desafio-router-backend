@@ -14,6 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("views"));
 
+// Archivos de opciones para ambos gestores de BD
+const optionsMYSQL = require('./options/mysql.config')
+const optionsSQLITE = require('./options/sqlite3.config')
+//////////////////////////////////////////////////////////////////////////////////////
 //Array del chat
 let mensajes = [
   {
