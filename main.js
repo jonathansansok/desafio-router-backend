@@ -15,6 +15,8 @@ app.use(express.json());
 app.use(express.static("views"));
 ////////cookies/////////////////
 const cookieParser= require('cookie-parser')
+////////session/////////////////
+const session= require('express-session')
 //Array del chat
 let mensajes = [{email: "bienvenida@chat.com", msg: "Bienvenido al chat", date: "01/01/2021 00:00:00"}];
   
@@ -69,20 +71,21 @@ app.get("/", (req, res) => {
   });
 });
 ////cokie!
-app.use(cookieParser('Coder'));
+app.use(cookieParser());
 app.use(express.json());
-app.get("/set-cookie", (req, res) => {
-  res.cookie('oreo', 'coder was here', {signed: true}).send({message: 'cookie sted' })
-});
-app.get('/get-cookies', (req, res) => {
-  res.send(req.signedCookies)
+app.post('/cookies', (req, res) => {
+  let cookie = req.body // { name: 'oreo', value: 'Coder was here', duration: 5 }
+  if (!cookie.name || !cookie.value || !cookie.duration) return res.send({ err: 'Faltan valores' })
+  res.cookie(cookie.name, cookie.value, { maxAge: cookie.duration*1000}).send({message: 'Galleta creada'})
 })
-app.get('/clear-cookie', (req, res) =>
- {
-res.clearCookie('oreo').send({message: "COOKIES DELETED"})
 
- }
-)
+app.get('/cookies', (req, res) => {
+  res.send(req.cookies)
+})
+
+app.delete('/cookies/:name', (req, res) => {
+  res.clearCookie(req.params.name).send({message: 'Cookie deleted!'})
+})
 ///termina cookie
 // EXPRESS ROUTER 
 
