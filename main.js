@@ -13,7 +13,8 @@ const io = new SocketServer(httpServer);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("views"));
-
+////////cookies/////////////////
+const cookieParser= require('cookie-parser')
 //Array del chat
 let mensajes = [{email: "bienvenida@chat.com", msg: "Bienvenido al chat", date: "01/01/2021 00:00:00"}];
   
@@ -67,8 +68,22 @@ app.get("/", (req, res) => {
     partialsPath: __dirname + "/views/partials",
   });
 });
+////cokie!
+app.use(cookieParser('Coder'));
+app.use(express.json());
+app.get("/set-cookie", (req, res) => {
+  res.cookie('oreo', 'coder was here', {signed: true}).send({message: 'cookie sted' })
+});
+app.get('/get-cookies', (req, res) => {
+  res.send(req.signedCookies)
+})
+app.get('/clear-cookie', (req, res) =>
+ {
+res.clearCookie('oreo').send({message: "COOKIES DELETED"})
 
-
+ }
+)
+///termina cookie
 // EXPRESS ROUTER 
 
 app.use("/productos", productosRouter);

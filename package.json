@@ -18,8 +18,10 @@
   "homepage": "https://github.com/jonathansansok/desafio-router-backend#readme",
   "dependencies": {
     "bootstrap": "^5.2.1",
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
+    "handlebars": "^4.7.7",
     "moment": "^2.29.4",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.19",
