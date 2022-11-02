@@ -15,8 +15,7 @@ app.use(express.json());
 app.use(express.static("views"));
 ////////cookies/////////////////
 const cookieParser= require('cookie-parser')
-////////session/////////////////
-const session= require('express-session')
+
 //Array del chat
 let mensajes = [{email: "bienvenida@chat.com", msg: "Bienvenido al chat", date: "01/01/2021 00:00:00"}];
   
